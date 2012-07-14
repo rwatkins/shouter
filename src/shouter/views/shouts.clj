@@ -1,7 +1,7 @@
 (ns shouter.views.shouts
   (:use [hiccup.core :only [html h]]
-        [hiccup.page-helpers :only [doctype]]
-        [hiccup.form-helpers :only [form-to label text-area submit-button]])
+        [hiccup.page :only [html5]]
+        [hiccup.form :only [form-to label text-area submit-button]])
   (:require [shouter.views.layout :as layout]))
 
 (defn shout-form []

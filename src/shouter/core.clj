@@ -1,5 +1,6 @@
 (ns shouter.core
-  (:use [compojure.core :only [defroutes]])
+  (:use [compojure.core :only [defroutes]]
+        [hiccup.page :only [html5]])
   (:require [compojure.route :as route]
             [compojure.handler :as handler]
             [ring.adapter.jetty :as ring]
@@ -16,7 +17,7 @@
 (defroutes routes
   shouter.controllers.shouts/routes
   (route/resources "/")
-  (route/not-found (layout/four-oh-four))
+  (route/not-found (layout/four-oh-four)))
 
 (def application (handler/site routes))
 
